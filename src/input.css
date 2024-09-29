@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'Kalpana';
+    src: url(./assets/fonts/Kalpana\ UNICODE.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
