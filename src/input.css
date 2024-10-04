@@ -2,10 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+.dot {
+  position: absolute;
+  width: 20px; /* Adjust to control the dot size */
+  height: 20px; /* Adjust to control the dot size */
+  background-color: transparent;
+  opacity: 1;
+  border-radius: 50%;
+}
 
 @font-face {
-    font-family: 'Kalpana';
-    src: url(./assets/fonts/Kalpana\ UNICODE.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Kalpana";
+  src: url(./assets/fonts/Kalpana\ UNICODE.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.pathway {
+  stroke: transparent;
+  stroke-width: 1px;
+  fill: none;
+}
+
+.svg-path-container {
+  width: 100vw; /* Full viewport width */
+  height: 100%; /* Full viewport height */
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the SVG */
+  top: 0;
+  left: 0;
+  /* border-color: red;
+    border-width: 10px; */
+}
+
+.wing-path {
+  fill: hsl(312, 100%, 79%, 0.81);
+}
+
+@keyframes left {
+  to {
+    transform: rotateY(60deg);
+  }
+}
+@keyframes right {
+  to {
+    transform: rotateY(60deg);
+  }
+}
+
+.bf {
+  width: 34px;
+  height: auto;
+  display: flex;
+  position: absolute;
+  top: -17px;
+  left: 17px;
+}
+.bf[class^="wing-"] {
+  width: 50%;
+}
+.bf[class^="wing-"] svg {
+  width: 100%;
+  height: auto;
+}
+.bf .wing-left {
+  animation: left 0.5s linear infinite alternate;
+  transform-origin: right;
+  z-index: 20;
+  /* transform: rotate(-90deg); */
+}
+.bf .wing-right {
+  animation: right 0.5s linear infinite alternate;
+  transform-origin: left;
+}
+.bf .wing-right svg {
+  transform: scaleX(-1);
+  /* transform: rotate(-90deg); */
 }
