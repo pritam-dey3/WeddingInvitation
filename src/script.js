@@ -1,6 +1,3 @@
-const screenWidth = document.querySelector('.svg-path-container').clientWidth;
-const screenHeight = document.querySelector('.svg-path-container').clientHeight;
-
 // Point class to store x and y coordinates
 class Point {
   constructor(x, y) {
@@ -12,6 +9,12 @@ class Point {
   display() {
     return `${this.x} ${this.y}`;
   }
+}
+
+function debugOnScreen(text) {
+  const debug = document.createElement("div");
+  debug.className = "debug";
+  debug.innerHTML = text;
 }
 
 function createDot(x, y) {
@@ -59,7 +62,7 @@ function cloneAndAppendToParent(id, newId) {
 }
 
 // Function to create an SVG path between point A and point B with random points in between
-function createSVGPath(width, height, numPoints = 4, reverse = false, target=".bf") {
+function createSVGPath(width, height, numPoints = 4, reverse = false, target = ".bf") {
   removeDot();
 
   const gap = width / (numPoints + 1);
@@ -124,6 +127,10 @@ function createSVGPath(width, height, numPoints = 4, reverse = false, target=".b
 
 // Animate the element along the SVG path
 function animateAlongPath(target = ".bf") {
+  const screenWidth = document.querySelector('.svg-path-container').clientWidth;
+  const screenHeight = document.querySelector('.svg-path-container').clientHeight;
+  debugOnScreen(`Width: ${screenWidth}, Height: ${screenHeight}`);
+
   createRandomColor(target);
   // Generate and return SVG path with 5 random points between A and B
   let start_from_left = Math.random() > 0.5 ? true : false;
@@ -151,8 +158,11 @@ function animateAlongPath(target = ".bf") {
 }
 
 // Initialize the SVG and start the animation
-document.querySelector('svg').setAttribute('viewBox', `0 0 ${screenWidth} ${screenHeight}`);
-cloneAndAppendToParent("bf-1", "bf-2");
-cloneAndAppendToParent("bf-1-path", "bf-2-path");
-animateAlongPath("#bf-1");
-animateAlongPath("#bf-2");
+// document.querySelector('svg').setAttribute('viewBox', `0 0 ${screenWidth} ${screenHeight}`);
+
+document.addEventListener('pageLoaded', function () {
+  cloneAndAppendToParent("bf-1", "bf-2");
+  cloneAndAppendToParent("bf-1-path", "bf-2-path");
+  animateAlongPath("#bf-1");
+  animateAlongPath("#bf-2");
+});
