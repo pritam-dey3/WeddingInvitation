@@ -129,7 +129,7 @@ function createSVGPath(width, height, numPoints = 4, reverse = false, target = "
 function animateAlongPath(target = ".bf") {
   const screenWidth = document.querySelector('.svg-path-container').clientWidth;
   const screenHeight = document.querySelector('.svg-path-container').clientHeight;
-  debugOnScreen(`Width: ${screenWidth}, Height: ${screenHeight}`);
+//   debugOnScreen(`Width: ${screenWidth}, Height: ${screenHeight}`);
 
   createRandomColor(target);
   // Generate and return SVG path with 5 random points between A and B

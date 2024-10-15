@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, target-densitydpi=medium-dpi"
+    />
+    <link href="../output.css" rel="stylesheet" />
+    <title>প্রীতম ও অন্বেষার শুভ বিবাহ</title>
+  </head>
+  <body>
+    <div class="bg-[#FFC470] flex justify-center">
+      <!-- loading -->
+      <div
+        id="loading-container"
+        class="bg-[#702e26] h-screen w-screen flex justify-center items-center"
+      >
+        <div class="loading"></div>
+      </div>
+      <!-- whole page -->
+      <div
+        id="page"
+        class="hidden lg:w-2/3 md:w-3/4 w-full bg-[#702e26] flex justify-between"
+      >
+        <div
+          class="w-[8vw] h-full bg-[url('./assets/side-design-bnw-v2.svg')] bg-repeat-y"
+        ></div>
+        <!-- main content -->
+        <div class="w-full gap-y-4 gap-x-6 text-white" id="main">
+          <!-- download button with icon -->
+          <div
+            class="fixed bottom-4 right-4 backdrop-blur-xl shadow-lg rounded-lg z-50 flex flex-row justify-center items-center"
+          >
+            <svg
+              class="w-6 h-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                fill="white"
+                d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
+              />
+            </svg>
+            <a
+              href="../assets/Wedding English Card.pdf"
+              download
+              class="text-white pr-2 py-2"
+            >
+              English Card
+            </a>
+          </div>
+
+          <!-- audio mute unmute -->
+          <div
+            class="fixed top-4 right-4 text-white p-4 rounded-full focus:outline-none shadow-xl z-50 backdrop-blur-xl"
+          >
+            <button id="audioButton" class="h-6 w-6">
+              <!-- Sound SVG Icon (Mute/Unmute) -->
+              <svg
+                id="unmuteIcon"
+                class="hidden"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 512"
+              >
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  fill="white"
+                  d="M533.6 32.5C598.5 85.2 640 165.8 640 256s-41.5 170.7-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64l0 384c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352 64 352c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l67.8 0L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"
+                />
+              </svg>
+              <svg
+                id="muteIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+              >
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  fill="white"
+                  d="M301.1 34.8C312.6 40 320 51.4 320 64l0 384c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352 64 352c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l67.8 0L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM425 167l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex justify-center">
+            <!-- shuvo bibaho -->
+            <img
+              class="w-full p-6"
+              src="../assets/subho_bibaho_fixed.svg"
+              alt="logo"
+            />
+          </div>
+          <div class="flex justify-center">
+            <!-- couple photo -->
+            <div
+              class="bg-[url(./assets/pechoner_gate-cropped.svg)] bg-no-repeat bg-cover w-4/5"
+            >
+              <div class="h-full flex justify-center items-end">
+                <img
+                  id="our-photo"
+                  class="h-3/4"
+                  src="../assets/removed_bg_couple.png"
+                  alt="couple"
+                />
+              </div>
+            </div>
+          </div>
+
+          <br />
+          <br />
+          <div class="w-full text-center font-kalpana">
+            <div class="text-lg">শুভ বিবাহের আর মাত্র</div>
+            <div id="timer" class="text-2xl text-[#96CEB4]"></div>
+            <div>বাকি</div>
+          </div>
+
+          <div class="flex justify-center">
+            <div class="w-4/5">
+              <img src="../assets/entry_rmbg-transformed.png" alt="" />
+            </div>
+          </div>
+          <br />
+          <br />
+          <div class="font-kalpana text-xl">
+            <!-- 2nd page -->
+            <div class="w-full text-center text-3xl">
+              ॥ শ্রী শ্রী প্রজাপতয়ে নমঃ ॥
+            </div>
+            <br />
+            <!-- <div class="w-full text-xl text-center">
+              <div>প্রহর-খানেক রাত হয়েছে শুধু,</div>
+              <div>ঘন ঘন বেজে ওঠে শাঁখ।</div>
+              <div>বরকন্যা যেন ছবির মতো</div>
+              <div>আঁচল-বাঁধা দাঁড়িয়ে আঁখি নত,</div>
+              <div>জানলা খুলে পুরাঙ্গনা যত</div>
+              <div>দেখছে চেয়ে ঘোমটা করি ফাঁক</div>
+              <div>বর্ষারাতে মেঘের গুরুগুরু-</div>
+              <div>তারি সঙ্গে বাজে বিয়ের শাঁখ।।</div>
+              <br />
+            </div> -->
+            <div class="w-full px-6">
+              <div class="w-full">সবিনয় নিবেদন,</div>
+              <div class="w-full">মহাশয়/মহাশয়া,</div>
+
+              <div class="w-full mt-3">
+                পরম মঙ্গলময় ঈশ্বরের কৃপা ও গুরুজনদের আশীর্বাদ সহ আগামী ১১ই
+                অগ্রহায়ন, ১৪৩১ (ইং ২৭শে নভেম্বর ২০২৪) বুধবারের সন্ধ্যায় শঙ্খ ও
+                উলুধ্বনি সহিত পুরোহিত কন্ঠের পবিত্র মন্ত্রোচ্চারনে মালা বদল ও
+                সিঁদুর দানের মধ্যে দিয়ে সাত পাকে বাঁধা পড়তে চলেছে প্রানযুগল
+              </div>
+              <div class="flex justify-center text-3xl mt-4">
+                “<a class="text-[#96CEB4]">অন্বেষা</a>” ও “<a
+                  class="text-[#96CEB4]"
+                  >প্রীতম</a
+                >”
+              </div>
+              <div class="mt-4">
+                এই উপলক্ষে আমাদের বিনম্র আমন্ত্রণ সার্থক হোক। উক্ত দিবসে অয়জিত
+                বিবাহনুষ্ঠানে ও প্রীতিভোজে আপনার / আপনাদের বর্ণময় উপস্থিতি,
+                স্বতঃস্ফূর্ত অংশগ্রহণ ও সুন্দরতায় সমকালীন নিয়মে পত্রাহ্বান
+                মার্জনীয়।
+              </div>
+            </div>
+            <div class="w-full pr-9 flex justify-end text-center mt-4">
+              আপ্যায়ন ও আন্তরিকতায়,<br />
+              শ্রীমতী মধুমিতা কর<br />
+              শ্রী অমল কর <br />
+            </div>
+          </div>
+          <br />
+          <div class="flex justify-center">
+            <div class="w-4/5">
+              <img src="../assets/sidur_dan_rmbg-transformed.png" alt="" />
+            </div>
+          </div>
+          <br />
+          <div class="font-kalpana text-xl grid grid-cols-1 gap-y-5">
+            <!-- 3rd page -->
+            <div class="w-full text-center text-3xl">॥ পরিচিতি ॥</div>
+            <div
+              class="flex flex-row justify-evenly text-sm px-1 gap-x-2 min-[400px]:text-lg"
+            >
+              <div class="w-auto flex flex-col">
+                <div class="w-full flex flex-row gap-x-2">
+                  <div>পাত্র:</div>
+                  <div>কল্যাণীয় প্রীতম</div>
+                </div>
+                <div class="w-full flex flex-row gap-x-2">
+                  <div>পিতা:</div>
+                  <div>শ্রীযুক্ত বিনয় কৃষ্ণ দে</div>
+                </div>
+                <div class="w-full flex flex-row gap-x-2">
+                  <div>মাতা:</div>
+                  <div>শ্রীমতী লীলা গাঙ্গুলী দে</div>
+                </div>
+                <div class="w-full flex flex-row gap-x-2">
+                  <div>নিবাস:</div>
+                  <div>রিষড়া, হুগলী</div>
+                </div>
+              </div>
+              <div class="w-auto flex flex-col">
+                <div class="w-full flex flex-row gap-x-2">
+                  <div>পাত্রী:</div>
+                  <div>কল্যাণীয়া অন্বেষা</div>
+                </div>
+                <div class="w-full flex flex-row gap-x-2">
+                  <div>পিতা:</div>
+                  <div>শ্রীযুক্ত অমল কর</div>
+                </div>
+                <div class="w-full flex flex-row gap-x-2">
+                  <div>মাতা:</div>
+                  <div>শ্রীমতী মধুমিতা কর</div>
+                </div>
+                <div class="w-full flex flex-row gap-x-2">
+                  <div>নিবাস:</div>
+                  <div class="w-auto">নিউটাউন, ৭০০১৫৬</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <div class="w-4/5">
+                <img src="../assets/malabodol_rmbg-transformed.png" alt="" />
+              </div>
+            </div>
+            <div class="w-full text-center text-lg">
+              <div class="w-full text-3xl">স্মারকলিপি:-</div>
+              <div class="w-full text-2xl mt-4">শুভবিবাহ :</div>
+              <div class="w-full">
+                ১১ ই অগ্রহায়ন ১৪৩১ (ইং ২৭ শে নভেম্বর, ২০২৪) বুধবার
+              </div>
+              <!-- <div class="text-2xl mt-4">শুভ প্রীতিভোজ:</div>
+              <div>১৩ ই অগ্রহায়ন, ১৪৩১ (ইং ২৯ শে নভেম্বর, ২০২৪) শুক্রবার</div> -->
+              <div class="text-2xl mt-4">বিবাহ বাসর ও আপ্যায়ন স্থল:</div>
+              <div>
+                <div>নিউটাউন বিজনেস ক্লাব, গ্রীন ভার্জ ব্যাংকয়েট   </div>
+              </div>
+              <br />
+              <button
+                type="button"
+                onclick="window.open('https://maps.app.goo.gl/qPfFPcDdwVavZjzg7', '_blank')"
+                class="relative z-50 text-[#FFC470] hover:text-white border border-[#FFC470] focus:ring-4 focus:outline-none focus:ring-[#FFC470] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+              >
+                <div class="flex flex-row gap-2">
+                  <svg
+                    class="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                  >
+                    <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                      fill="#FFC470"
+                      d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
+                    />
+                  </svg>
+                  Location
+                </div>
+              </button>
+            </div>
+          </div>
+          <br /><br /><br />
+          <!-- end content -->
+        </div>
+        <div
+          class="w-[8vw] h-full bg-[url('./assets/side-design-bnw-v2.svg')] bg-repeat-y"
+          style="transform: scaleX(-1)"
+        ></div>
+        <div class="svg-path-container">
+          <svg class="w-screen">
+            <path
+              class="pathway"
+              d="M 00 50 Q 75 100, 150 50 Q 200 100, 200 50 L0 100"
+              id="bf-1-path"
+            />
+          </svg>
+
+          <div class="bf" id="bf-1">
+            <div class="wing-left">
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 17 29"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xml:space="preserve"
+                xmlns:serif="http://www.serif.com/"
+                style="
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 2;
+                "
+              >
+                <g transform="matrix(0.0156264,0,0,0.0156264,-5.01358,-5.8732)">
+                  <path
+                    class="wing-path"
+                    d="M1440.74,1614.9C1440.74,1494.13 1440.61,1185.89 1440.61,1065.11C1359.94,917.774 1154.27,576.526 933.987,480.781C758.042,404.081 442.781,320.927 347.826,423.951C309.909,465.096 311.95,525.578 353.949,603.894C495.736,868.494 562.977,1033.61 559.433,1109.67C559.631,1165.3 582.03,1218.62 621.625,1257.7C672.094,1308.02 737.686,1340.44 808.312,1349.98C720.107,1405.47 666.305,1502.53 665.987,1606.74C667.922,1738.19 698.611,1867.63 755.892,1985.96C802.959,2114.05 921.66,2202.78 1057.84,2211.67L1059.66,2211.67C1210.93,2193.6 1319.79,2057.62 1304.35,1906.04C1304.35,1701.95 1387.79,1632.12 1440.74,1614.9Z"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="wing-right">
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 17 29"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xml:space="preserve"
+                xmlns:serif="http://www.serif.com/"
+                style="
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 2;
+                "
+              >
+                <g transform="matrix(0.0156264,0,0,0.0156264,-5.01358,-5.8732)">
+                  <path
+                    class="wing-path"
+                    d="M1440.74,1614.9C1440.74,1494.13 1440.61,1185.89 1440.61,1065.11C1359.94,917.774 1154.27,576.526 933.987,480.781C758.042,404.081 442.781,320.927 347.826,423.951C309.909,465.096 311.95,525.578 353.949,603.894C495.736,868.494 562.977,1033.61 559.433,1109.67C559.631,1165.3 582.03,1218.62 621.625,1257.7C672.094,1308.02 737.686,1340.44 808.312,1349.98C720.107,1405.47 666.305,1502.53 665.987,1606.74C667.922,1738.19 698.611,1867.63 755.892,1985.96C802.959,2114.05 921.66,2202.78 1057.84,2211.67L1059.66,2211.67C1210.93,2193.6 1319.79,2057.62 1304.35,1906.04C1304.35,1701.95 1387.79,1632.12 1440.74,1614.9Z"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+          // Once the page is fully loaded, destroy the loading div and remove the hidden class from the page div
+          const loadingDiv = document.getElementById("loading-container");
+          const pageDiv = document.getElementById("page");
+
+          loadingDiv.parentNode.removeChild(loadingDiv);
+          pageDiv.classList.remove("hidden");
+
+          // Dispatch a custom event indicating that the work is done
+          const event = new Event("pageLoaded");
+          document.dispatchEvent(event);
+        }
+      };
+      // JavaScript to handle audio play and icon toggle
+      let isMuted = true;
+      const audioButton = document.getElementById("audioButton");
+      const unmuteIcon = document.getElementById("unmuteIcon");
+      const muteIcon = document.getElementById("muteIcon");
+      const audio = new Audio("../assets/audio/bibaho ovijan.mp3"); // Replace with the path to your sound file
+      audioButton.addEventListener("click", function () {
+        if (isMuted) {
+          audio.loop = true;
+          audio.play();
+          muteIcon.classList.add("hidden");
+          unmuteIcon.classList.remove("hidden");
+        } else {
+          audio.pause();
+          unmuteIcon.classList.add("hidden");
+          muteIcon.classList.remove("hidden");
+        }
+        isMuted = !isMuted;
+      });
+
+      function convertToBengali(num) {
+        const bengaliDigits = [
+          "০",
+          "১",
+          "২",
+          "৩",
+          "৪",
+          "৫",
+          "৬",
+          "৭",
+          "৮",
+          "৯",
+        ];
+        return num
+          .toString()
+          .replace(/\d/g, (digit) => bengaliDigits[parseInt(digit, 10)]);
+      }
+
+      // Set the date we're counting down to
+      var countDownDate = new Date("Nov 27, 2024 22:30:00").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // convert to bengali
+        days = convertToBengali(days);
+        hours = convertToBengali(hours);
+        minutes = convertToBengali(minutes);
+        seconds = convertToBengali(seconds);
+        // Display the result in the element with id="timer"
+        document.getElementById("timer").innerHTML =
+          days +
+          " দিন  " +
+          hours +
+          " ঘণ্টা  " +
+          minutes +
+          " মিনিট  " +
+          seconds +
+          " সেকেন্ড";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>
